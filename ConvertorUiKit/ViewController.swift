@@ -22,8 +22,8 @@ class ViewController: UIViewController {
     func gradient(frame:CGRect) -> CAGradientLayer {
         let layer = CAGradientLayer()
         layer.frame = frame
-        layer.startPoint = CGPointMake(0,0.5)
-        layer.endPoint = CGPointMake(1,0.5)
+        layer.startPoint = CGPointMake(0,1)
+        layer.endPoint = CGPointMake(1,1)
         layer.colors = [
             UIColor.red.cgColor,UIColor.blue.cgColor]
         return layer
