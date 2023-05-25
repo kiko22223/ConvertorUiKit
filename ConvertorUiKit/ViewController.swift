@@ -20,11 +20,17 @@ class ViewController: UIViewController {
         tableView.delegate = self
     }
 
-    
-    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        coordinator.animate(alongsideTransition: { (context: UIViewControllerTransitionCoordinatorContext) -> Void in
+
+        }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
+            self.tableView.reloadData()
+        })
+
+        super.viewWillTransition(to: size, with: coordinator)
+    }
+
 }
-
-
 
 extension ViewController: UITableViewDelegate {
     
