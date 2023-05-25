@@ -15,19 +15,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(UINib(nibName: "MenuTableViewCell", bundle: nil), forCellReuseIdentifier: "menuCell")
         tableView.dataSource = self
         tableView.delegate = self
     }
 
-    func gradient(frame:CGRect) -> CAGradientLayer {
-        let layer = CAGradientLayer()
-        layer.frame = frame
-        layer.startPoint = CGPointMake(0,1)
-        layer.endPoint = CGPointMake(1,1)
-        layer.colors = [
-            UIColor.red.cgColor,UIColor.blue.cgColor]
-        return layer
-    }
+    
     
 }
 
@@ -42,16 +35,20 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return units.count
     }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 160
+    }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = units[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath) as! MenuTableViewCell
+        let description = MenuTableViewDescription(title: units[indexPath.row],
+                                                   image: nil,
+                                                   gradientStartColor: UIColor.orange,
+                                                   gradientEndColor: UIColor.yellow)
+        cell.setup(with: description)
      
-        
-        //Now on your tableViewcell do below
-        
-        cell.layer.insertSublayer(gradient(frame: cell.bounds), at:1)
         
         return cell
     }
