@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct MenuTableViewDescription {
+struct MenuTableViewCellDescription {
     let title: String
     let image: UIImage?
     let gradientStartColor: UIColor
@@ -20,7 +20,7 @@ class MenuTableViewCell: UITableViewCell {
     @IBOutlet private weak var unitImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
 
-    private var data: MenuTableViewDescription?
+    private var data: MenuTableViewCellDescription?
     private let cornerRadius: CGFloat = 10
 
     private var gradientLayer: CAGradientLayer!
@@ -48,7 +48,7 @@ class MenuTableViewCell: UITableViewCell {
         gradientView.layer.addSublayer(gradientLayer)
     }
 
-    func setup(with data: MenuTableViewDescription) {
+    func setup(with data: MenuTableViewCellDescription) {
         self.data = data
         titleLabel.text = data.title
         unitImageView.image = data.image

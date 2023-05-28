@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     
     let units = ["weight", "lenght", "value"]
+    let typeOfCell : [[MenuTableViewCellDescription]] = [[MenuTableViewCellDescription(title: "test", image: nil, gradientStartColor: UIColor.black, gradientEndColor: UIColor.blue)], [MenuTableViewCellDescription(title: "test0", image: nil, gradientStartColor: UIColor.black, gradientEndColor: UIColor.white)], [MenuTableViewCellDescription(title: "test1", image: nil, gradientStartColor: UIColor.green, gradientEndColor: UIColor.gray)]]
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -49,12 +50,13 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath) as! MenuTableViewCell
-        let description = MenuTableViewDescription(title: units[indexPath.row],
-                                                   image: nil,
-                                                   gradientStartColor: UIColor.orange,
-                                                   gradientEndColor: UIColor.yellow)
-        cell.setup(with: description)
-     
+//        let description = MenuTableViewCellDescription(title: units[indexPath.row],
+//                                                   image: nil,
+//                                                   gradientStartColor: UIColor.orange,
+//                                                   gradientEndColor: UIColor.yellow)
+//        cell.setup(with: description)
+//
+        let desciption2 = typeOfCell[indexPath.row]
         
         return cell
     }
