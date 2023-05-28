@@ -10,14 +10,15 @@ import UIKit
 class ViewController: UIViewController {
 
     let cells : [MenuTableViewCellDescription] = [
-        MenuTableViewCellDescription(title: "test", image: nil, gradientStartColor: UIColor.black, gradientEndColor: UIColor.blue),
-        MenuTableViewCellDescription(title: "test0", image: nil, gradientStartColor: UIColor.black, gradientEndColor: UIColor.white),
-        MenuTableViewCellDescription(title: "test1", image: nil, gradientStartColor: UIColor.green, gradientEndColor: UIColor.gray)]
+        MenuTableViewCellDescription(title: "Weight", image: nil, gradientStartColor: UIColor.red, gradientEndColor: UIColor.orange),
+        MenuTableViewCellDescription(title: "Lenght", image: nil, gradientStartColor: UIColor.green, gradientEndColor: UIColor.yellow),
+        MenuTableViewCellDescription(title: "Value", image: nil, gradientStartColor: UIColor.blue, gradientEndColor: UIColor.purple)]
 
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.prefersLargeTitles = true
         tableView.register(UINib(nibName: "MenuTableViewCell", bundle: nil), forCellReuseIdentifier: "menuCell")
         tableView.dataSource = self
         tableView.delegate = self
