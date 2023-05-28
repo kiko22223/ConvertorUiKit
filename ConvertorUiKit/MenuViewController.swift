@@ -7,12 +7,18 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MenuViewController: UIViewController {
 
     let cells : [MenuTableViewCellDescription] = [
-        MenuTableViewCellDescription(title: "Weight", image: nil, gradientStartColor: UIColor.red, gradientEndColor: UIColor.orange),
-        MenuTableViewCellDescription(title: "Lenght", image: nil, gradientStartColor: UIColor.green, gradientEndColor: UIColor.yellow),
-        MenuTableViewCellDescription(title: "Value", image: nil, gradientStartColor: UIColor.blue, gradientEndColor: UIColor.purple)]
+        MenuTableViewCellDescription(title: "Lenght", imageName: "imageKM",
+                                     gradientStartColor: .blue, gradientEndColor: .cyan),
+        MenuTableViewCellDescription(title: "Volume", imageName: "imageML",
+                                     gradientStartColor: .orange, gradientEndColor: .yellow),
+        MenuTableViewCellDescription(title: "Weight", imageName: "imageKG",
+                                     gradientStartColor: .red, gradientEndColor: .blue),
+        MenuTableViewCellDescription(title: "Temperature", imageName: "imageC",
+                                     gradientStartColor: UIColor.blue, gradientEndColor: UIColor.purple)
+        ]
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -36,27 +42,29 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController: UITableViewDelegate {
+extension MenuViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+    }
+
     
 }
 
-extension ViewController: UITableViewDataSource {
+extension MenuViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cells.count
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 160
+        return 150
     }
-    
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath) as! MenuTableViewCell
         cell.setup(with: cells[indexPath.row])
         return cell
     }
-    
     
 }
 
