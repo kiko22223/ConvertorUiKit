@@ -7,17 +7,36 @@
 
 import UIKit
 
+struct Section {
+    let title: String
+    let units: [Int]
+}
+
+struct Units {
+    let units: [String]
+    let sections: [Section]
+    let ratios: [Double]
+    
+    func convert(value: Double, fromUnit: String, toUnit: String) -> String {
+        guard let fromIndex = units.firstIndex(of: fromUnit),
+              let toIndex = units.firstIndex(of: toUnit),
+              ratios.indices.contains(fromIndex),
+              ratios.indices.contains(toIndex) else { return "" }
+        let basicValue = value / ratios[fromIndex]
+        let toValue = basicValue * ratios[toIndex]
+        return "\(toValue) \(toUnit)"
+    }
+}
+
+
+
 class MenuViewController: UIViewController {
 
     let cells : [MenuTableViewCellDescription] = [
-        MenuTableViewCellDescription(title: "Lenght", imageName: "imageKM",
-                                     gradientStartColor: .blue, gradientEndColor: .cyan),
-        MenuTableViewCellDescription(title: "Volume", imageName: "imageML",
-                                     gradientStartColor: .orange, gradientEndColor: .yellow),
-        MenuTableViewCellDescription(title: "Weight", imageName: "imageKG",
-                                     gradientStartColor: .red, gradientEndColor: .blue),
-        MenuTableViewCellDescription(title: "Temperature", imageName: "imageC",
-                                     gradientStartColor: UIColor.blue, gradientEndColor: UIColor.purple)
+        MenuTableViewCellDescription(title: "Lenght", imageName: "imageKM",gradientStartColor: .blue, gradientEndColor: .cyan),
+        MenuTableViewCellDescription(title: "Volume", imageName: "imageML", gradientStartColor: .orange, gradientEndColor: .yellow),
+        MenuTableViewCellDescription(title: "Weight", imageName: "imageKG",gradientStartColor: .red, gradientEndColor: .blue),
+        MenuTableViewCellDescription(title: "Temperature", imageName: "imageC",gradientStartColor: UIColor.blue, gradientEndColor: UIColor.purple)
         ]
 
     @IBOutlet weak var tableView: UITableView!
