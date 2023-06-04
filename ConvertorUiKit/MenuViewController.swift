@@ -7,33 +7,15 @@
 
 import UIKit
 
-struct Section {
-    let title: String
-    let units: [Int]
-}
-
-struct Units {
-    let units: [String]
-    let sections: [Section]
-    let ratios: [Double]
-    
-    func convert(value: Double, fromUnit: String, toUnit: String) -> String {
-        guard let fromIndex = units.firstIndex(of: fromUnit),
-              let toIndex = units.firstIndex(of: toUnit),
-              ratios.indices.contains(fromIndex),
-              ratios.indices.contains(toIndex) else { return "" }
-        let basicValue = value / ratios[fromIndex]
-        let toValue = basicValue * ratios[toIndex]
-        return "\(toValue) \(toUnit)"
-    }
-}
-
-
-
 class MenuViewController: UIViewController {
 
     let cells : [MenuTableViewCellDescription] = [
-        MenuTableViewCellDescription(title: "Lenght", imageName: "imageKM",gradientStartColor: .blue, gradientEndColor: .cyan),
+        MenuTableViewCellDescription(title: "Lenght", imageName: "imageKM",
+                                     gradientStartColor: .blue, gradientEndColor: .cyan,
+                                     units: Units(units: ["km", "m", "cm", "mm", "Mi", "Yd", "Ft", "In"],
+                                                  sections: [Section(title: "Metrické", units: [0,1,2,3]),
+                                                             Section(title: "Imperiálne", units: [4,5,6,7])],
+                                                  ratios: [1000, 1, 0.01, 0.001, 1609.344, 0.9144, 0.3048, 0.0254])),
         MenuTableViewCellDescription(title: "Volume", imageName: "imageML", gradientStartColor: .orange, gradientEndColor: .yellow),
         MenuTableViewCellDescription(title: "Weight", imageName: "imageKG",gradientStartColor: .red, gradientEndColor: .blue),
         MenuTableViewCellDescription(title: "Temperature", imageName: "imageC",gradientStartColor: UIColor.blue, gradientEndColor: UIColor.purple)

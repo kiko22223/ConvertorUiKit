@@ -7,14 +7,6 @@
 
 import UIKit
 
-struct MenuTableViewCellDescription {
-    let title: String
-    var imageName: String = ""
-    let gradientStartColor: UIColor
-    let gradientEndColor: UIColor
-    let units: Units
-}
-
 class MenuTableViewCell: UITableViewCell {
 
     @IBOutlet private weak var gradientView: UIView!
