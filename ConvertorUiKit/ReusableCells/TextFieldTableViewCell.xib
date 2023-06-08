@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,17 +16,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i8Y-bA-XLy">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" placeholder="Zadaj vstupnú hodnotu" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i8Y-bA-XLy">
+                        <rect key="frame" x="16" y="6" width="288" height="35"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits"/>
+                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad" returnKeyType="done"/>
+                        <connections>
+                            <action selector="editingChanged:" destination="KGk-i7-Jjw" eventType="editingChanged" id="7qs-z9-QHL"/>
+                        </connections>
                     </textField>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="i8Y-bA-XLy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="8F4-mc-wQW"/>
-                    <constraint firstAttribute="trailing" secondItem="i8Y-bA-XLy" secondAttribute="trailing" id="AoN-jl-tCh"/>
-                    <constraint firstItem="i8Y-bA-XLy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="UWV-2r-Kef"/>
-                    <constraint firstAttribute="bottom" secondItem="i8Y-bA-XLy" secondAttribute="bottom" id="xmN-ga-tbP"/>
+                    <constraint firstItem="i8Y-bA-XLy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="1SM-IA-avj"/>
+                    <constraint firstAttribute="bottom" secondItem="i8Y-bA-XLy" secondAttribute="bottom" constant="3" id="274-hR-K2Q"/>
+                    <constraint firstItem="i8Y-bA-XLy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="din-Rh-h6g"/>
+                    <constraint firstAttribute="trailing" secondItem="i8Y-bA-XLy" secondAttribute="trailing" constant="16" id="prG-Um-wJc"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

@@ -16,19 +16,27 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Tcv-11-DcX">
-                        <rect key="frame" x="16" y="7" width="288" height="32"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Tcv-11-DcX">
+                        <rect key="frame" x="16" y="3" width="288" height="36"/>
                         <segments>
                             <segment title="First"/>
                             <segment title="Second"/>
                         </segments>
+                        <connections>
+                            <action selector="valueChanged:" destination="KGk-i7-Jjw" eventType="valueChanged" id="HBU-jO-pyz"/>
+                        </connections>
                     </segmentedControl>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="Tcv-11-DcX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="Kp1-5D-LHX"/>
+                    <constraint firstAttribute="trailing" secondItem="Tcv-11-DcX" secondAttribute="trailing" constant="16" id="SL0-4F-nz3"/>
+                    <constraint firstItem="Tcv-11-DcX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="bes-pr-rDA"/>
+                    <constraint firstAttribute="bottom" secondItem="Tcv-11-DcX" secondAttribute="bottom" constant="6" id="sBC-2f-vWr"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="UnitsSlider" destination="Tcv-11-DcX" id="eiC-ZL-xyo"/>
+                <outlet property="unitsSlider" destination="Tcv-11-DcX" id="eiC-ZL-xyo"/>
             </connections>
             <point key="canvasLocation" x="138.93129770992365" y="19.718309859154932"/>
         </tableViewCell>

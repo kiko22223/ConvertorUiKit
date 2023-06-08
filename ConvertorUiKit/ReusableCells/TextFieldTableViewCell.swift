@@ -7,19 +7,32 @@
 
 import UIKit
 
-class TextFieldTableViewCell: UITableViewCell {
+protocol TextFieldTableViewCellDelegate: AnyObject {
+    func textFieldValueChanged(to value: Double)
+}
 
+class TextFieldTableViewCell: UITableViewCell {
     @IBOutlet weak var textField: UITextField!
-    
+
+    weak var delegate: TextFieldTableViewCellDelegate?
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        textField.delegate = self
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    @IBAction func editingChanged(_ sender: UITextField) {
+        if let value = Double(sender.text ?? "") {
+            delegate?.textFieldValueChanged(to: value)
+        }
     }
-    
+}
+
+extension TextFieldTableViewCell: UITextFieldDelegate {
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        endEditing(true)
+        return true
+    }
+
 }

@@ -7,34 +7,27 @@
 
 import UIKit
 
-struct SliderUnits {
-    let units = MenuViewController().cells
-    let numberOfSegments = 0
+protocol SliderTableViewCellDelegate: AnyObject {
+    func sliderValueChanged(to index: Int)
 }
 
 class SliderTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var UnitsSlider: UISegmentedControl!
-    
-    func setup(with data: MenuTableViewCellDescription) {
-        self.UnitsSlider = 
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
+    @IBOutlet weak var unitsSlider: UISegmentedControl!
 
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    weak var delegate: SliderTableViewCellDelegate?
+    
+    func setup(with units: [String], delegate: SliderTableViewCellDelegate?) {
+        unitsSlider.removeAllSegments()
+        units.enumerated().forEach{index, unit in
+            unitsSlider.insertSegment(withTitle: unit, at: index, animated: false)
+        }
+        unitsSlider.selectedSegmentIndex = 0
+        self.delegate = delegate
     }
     
+    @IBAction func valueChanged(_ sender: UISegmentedControl) {
+        delegate?.sliderValueChanged(to: sender.selectedSegmentIndex)
+    }
+
 }
