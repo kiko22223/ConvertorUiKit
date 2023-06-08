@@ -21,6 +21,8 @@
 		96A89C412A16D60300B94492 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96A89C3F2A16D60300B94492 /* Main.storyboard */; };
 		96A89C432A16D60400B94492 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96A89C422A16D60400B94492 /* Assets.xcassets */; };
 		96A89C462A16D60400B94492 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96A89C442A16D60400B94492 /* LaunchScreen.storyboard */; };
+		96F64D982A32557800D9A5F2 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F64D962A32557800D9A5F2 /* TextFieldTableViewCell.swift */; };
+		96F64D992A32557800D9A5F2 /* TextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96F64D972A32557800D9A5F2 /* TextFieldTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		96A89C422A16D60400B94492 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96A89C452A16D60400B94492 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96A89C472A16D60400B94492 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96F64D962A32557800D9A5F2 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
+		96F64D972A32557800D9A5F2 /* TextFieldTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				376FE3582A2BBF1200A84B03 /* MenuTableViewCell.xib */,
 				376FE35B2A2BBF1200A84B03 /* SliderTableViewCell.swift */,
 				376FE35A2A2BBF1200A84B03 /* SliderTableViewCell.xib */,
+				96F64D962A32557800D9A5F2 /* TextFieldTableViewCell.swift */,
+				96F64D972A32557800D9A5F2 /* TextFieldTableViewCell.xib */,
 			);
 			path = ReusableCells;
 			sourceTree = "<group>";
@@ -166,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96A89C462A16D60400B94492 /* LaunchScreen.storyboard in Resources */,
+				96F64D992A32557800D9A5F2 /* TextFieldTableViewCell.xib in Resources */,
 				96A89C432A16D60400B94492 /* Assets.xcassets in Resources */,
 				376FE35E2A2BBF1200A84B03 /* SliderTableViewCell.xib in Resources */,
 				376FE35C2A2BBF1200A84B03 /* MenuTableViewCell.xib in Resources */,
@@ -189,6 +196,7 @@
 				37B6D81E2A2CEFAD00362F34 /* Section.swift in Sources */,
 				376FE35F2A2BBF1200A84B03 /* SliderTableViewCell.swift in Sources */,
 				376FE3612A2BBF8900A84B03 /* ConvertingUnitsViewController.swift in Sources */,
+				96F64D982A32557800D9A5F2 /* TextFieldTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

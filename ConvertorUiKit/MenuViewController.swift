@@ -56,9 +56,7 @@ class MenuViewController: UIViewController {
 }
 
 extension MenuViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-    }
 
 }
 
@@ -77,6 +75,7 @@ extension MenuViewController: UITableViewDataSource {
         cell.setup(with: cells[indexPath.row])
         return cell
     }
+    
     
 }
 

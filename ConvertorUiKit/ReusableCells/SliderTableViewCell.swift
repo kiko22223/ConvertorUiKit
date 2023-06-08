@@ -8,7 +8,7 @@
 import UIKit
 
 struct SliderUnits {
-    let units: [String] = ["km","m","cm","mm","Mi","Yd","Ft","In"]
+    let units = MenuViewController().cells
     let numberOfSegments = 0
 }
 
@@ -16,7 +16,14 @@ class SliderTableViewCell: UITableViewCell {
     
     @IBOutlet weak var UnitsSlider: UISegmentedControl!
     
-
+    func setup(with data: MenuTableViewCellDescription) {
+        self.UnitsSlider = 
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
