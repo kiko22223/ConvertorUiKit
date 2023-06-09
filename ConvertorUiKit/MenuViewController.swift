@@ -65,7 +65,7 @@ class MenuViewController: UIViewController {
         guard let index = sender as? Int,
               let destinationVC = segue.destination as? ConvertingUnitsViewController else { return }
         destinationVC.units = cells[index].units
-        destinationVC.titleStr = cells[index].title
+        destinationVC.title = cells[index].title
     }
 
 }

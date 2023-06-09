@@ -10,14 +10,12 @@ import UIKit
 class ConvertingUnitsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
-    public var titleStr: String?
     public var units: Units!
     private var value: Double = 1
     private var selectedUnitIndex = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = titleStr
         tableView.register(UINib(nibName: "SliderTableViewCell", bundle: nil), forCellReuseIdentifier: "sliderCell")
         tableView.register(UINib(nibName: "TextFieldTableViewCell", bundle: nil), forCellReuseIdentifier: "textCell")
         tableView.dataSource = self
@@ -54,6 +52,7 @@ extension ConvertingUnitsViewController: UITableViewDataSource {
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: .default,
                                                                                             reuseIdentifier: "cell")
+        cell.selectionStyle = .none
         let fromUnit = units.units[selectedUnitIndex]
         let toUnit =  units.units[units.sections[indexPath.section].units[indexPath.row]]
         cell.textLabel?.text = units.convert(value: value, fromUnit: fromUnit, toUnit: toUnit)
