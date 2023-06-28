@@ -29,7 +29,10 @@ extension ConvertingUnitsViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? 2 : units.sections[section].units.count
+        if section == 0 {
+            return 2
+        }
+        return units.sections[section].units.count
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

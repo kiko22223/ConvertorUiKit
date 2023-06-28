@@ -7,7 +7,7 @@
 
 struct Units {
     let units: [String]
-    let sections: [Section]
+    let sections: Array<Section>  // [Section]
     let ratios: [Double]
 
     func convert(value: Double, fromUnit: String, toUnit: String) -> String {
